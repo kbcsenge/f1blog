@@ -15,7 +15,27 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import { DriversComponent } from './component/drivers.component';
+import { MaxVerstappenComponent } from './drivers/max-verstappen/max-verstappen.component';
+import { CharlesLeclercComponent } from './drivers/charles-leclerc/charles-leclerc.component';
+import { CarlosSainzComponent } from './drivers/carlos-sainz/carlos-sainz.component';
+import { LandoNorrisComponent } from './drivers/lando-norris/lando-norris.component';
+import { LewisHamiltonComponent } from './drivers/lewis-hamilton/lewis-hamilton.component';
+import { GeorgeRussellComponent } from './drivers/george-russell/george-russell.component';
+import { SergioPerezComponent } from './drivers/sergio-perez/sergio-perez.component';
+import { OscarPiastriComponent } from './drivers/oscar-piastri/oscar-piastri.component';
+import { LanceStrollComponent } from './drivers/lance-stroll/lance-stroll.component';
+import { FernandoAlonsoComponent } from './drivers/fernando-alonso/fernando-alonso.component';
+import { KevinMagnussenComponent } from './drivers/kevin-magnussen/kevin-magnussen.component';
+import { NicoHulkenbergComponent } from './drivers/nico-hulkenberg/nico-hulkenberg.component';
+import { ValtteriBottasComponent } from './drivers/valtteri-bottas/valtteri-bottas.component';
+import { PierreGaslyComponent } from './drivers/pierre-gasly/pierre-gasly.component';
+import { EstebanOconComponent } from './drivers/esteban-ocon/esteban-ocon.component';
+import { AlexanderAlbonComponent } from './drivers/alexander-albon/alexander-albon.component';
+import { LoganSargeantComponent } from './drivers/logan-sargeant/logan-sargeant.component';
+import { YukiTsunodaComponent } from './drivers/yuki-tsunoda/yuki-tsunoda.component';
+import { DanielRicciardoComponent } from './drivers/daniel-ricciardo/daniel-ricciardo.component';
+import { GuanyuZhouComponent } from './drivers/guanyu-zhou/guanyu-zhou.component';
+import {DriversComponent} from "./drivers/drivers.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +46,26 @@ import { DriversComponent } from './component/drivers.component';
     LoginhomeComponent,
     NewpostComponent,
     SeeothersComponent,
+    MaxVerstappenComponent,
+    CharlesLeclercComponent,
+    CarlosSainzComponent,
+    LandoNorrisComponent,
+    LewisHamiltonComponent,
+    GeorgeRussellComponent,
+    SergioPerezComponent,
+    OscarPiastriComponent,
+    LanceStrollComponent,
+    FernandoAlonsoComponent,
+    KevinMagnussenComponent,
+    NicoHulkenbergComponent,
+    ValtteriBottasComponent,
+    PierreGaslyComponent,
+    EstebanOconComponent,
+    AlexanderAlbonComponent,
+    LoganSargeantComponent,
+    YukiTsunodaComponent,
+    DanielRicciardoComponent,
+    GuanyuZhouComponent,
     DriversComponent
   ],
   imports: [
