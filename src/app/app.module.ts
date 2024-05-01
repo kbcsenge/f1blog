@@ -36,6 +36,10 @@ import { YukiTsunodaComponent } from './drivers/yuki-tsunoda/yuki-tsunoda.compon
 import { DanielRicciardoComponent } from './drivers/daniel-ricciardo/daniel-ricciardo.component';
 import { GuanyuZhouComponent } from './drivers/guanyu-zhou/guanyu-zhou.component';
 import {DriversComponent} from "./drivers/drivers.component";
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -76,7 +80,11 @@ import {DriversComponent} from "./drivers/drivers.component";
     MatFormFieldModule,
     MatIcon,
     MatInput,
-    MatButton
+    MatButton,
+    provideFirebaseApp(() => initializeApp({"projectId":"f1blog-webkert","appId":"1:853235035320:web:add9ad4c9221f78e01d84d","storageBucket":"f1blog-webkert.appspot.com","apiKey":"AIzaSyDmBmDpHklWBVN-8oUCFvMYBUMsaH0FlOw","authDomain":"f1blog-webkert.firebaseapp.com","messagingSenderId":"853235035320","measurementId":"G-XWHL13K3FK"})),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [
     provideAnimationsAsync()
