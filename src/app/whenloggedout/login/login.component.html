@@ -4,20 +4,10 @@
   <li class="right" (click)="goToRegister()">Regisztráció</li>
 </ul>
 
-<!--<mat-form-field appearance="fill">-->
-<!--  <mat-label>Felhasználónév</mat-label>-->
-<!--  <input matInput [formControl]="usernameFormControl" required>-->
-<!--  <mat-error *ngIf="usernameFormControl.hasError('required')">-->
-<!--    A felhasználónév megadása kötelező-->
-<!--  </mat-error>-->
-<!--</mat-form-field>-->
-
-<!--<mat-form-field appearance="fill">-->
-<!--  <mat-label>Jelszó</mat-label>-->
-<!--  <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordFormControl" required>-->
-<!--  <mat-error *ngIf="passwordFormControl.hasError('required')">-->
-<!--    A jelszó megadása kötelező-->
-<!--  </mat-error>-->
-<!--</mat-form-field>-->
-
-<!--<button mat-raised-button color="primary">Bejelentkezés</button>-->
+<div class="main_component">
+  <span><mat-label for="email">Email: </mat-label><input matInput type="text" [formControl]="email" /></span>
+  <span><label for="password">Password: </label><input type="password" [formControl]="password" /></span>
+  <span>
+        <mat-button (click)="login()" matSuffix>Login</mat-button>
+    </span>
+</div>

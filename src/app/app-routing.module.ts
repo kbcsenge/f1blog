@@ -25,11 +25,12 @@ import {AlexanderAlbonComponent} from "./drivers/alexander-albon/alexander-albon
 import {ValtteriBottasComponent} from "./drivers/valtteri-bottas/valtteri-bottas.component";
 import {GuanyuZhouComponent} from "./drivers/guanyu-zhou/guanyu-zhou.component";
 import {LanceStrollComponent} from "./drivers/lance-stroll/lance-stroll.component";
+import {AuthGuard} from "@angular/fire/auth-guard";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: LoginhomeComponent },
+  { path: 'home', component: LoginhomeComponent},
   { path : 'new' , component: NewpostComponent},
   { path : '' , component: HomeComponent}
 ];
