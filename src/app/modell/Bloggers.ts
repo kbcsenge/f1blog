@@ -1,5 +1,5 @@
 export interface Bloggers{
-  name: string;
-  email: string;
-  id: string;
+  username: string;
+  fullname: string;
+  favouritedriver: string;
 }

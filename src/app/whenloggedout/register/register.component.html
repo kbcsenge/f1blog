@@ -1,31 +1,67 @@
-<ul>
+<ul class="nav">
   <li class="homeicon" (click)="goToHome()">Kezdőlap</li>
   <li class="right" (click)="goToLogin()">Bejelentkezés</li>
   <li class="right">Regisztráció</li>
 </ul>
 
 
-<div class="main_component">
   <div class="div-flex">
-    <h1>Register an account!</h1>
+    <h1>Regisztráció</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-      <mat-form-field>
+    <mat-form-field>
+      <mat-label for="fullname">Név: </mat-label>
+      <input matInput type="text" formControlName="fullname" required/>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <mat-label for="username">Felhasználónév: </mat-label>
+      <input matInput type="text" formControlName="username" required/>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
         <mat-label for="email">Email: </mat-label>
-        <input matInput type="text" formControlName="email" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label for="password">Password: </mat-label>
-        <input matInput type="password" formControlName="password" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label for="rePassword">Confirm password: </mat-label>
-        <input matInput type="password" formControlName="rePassword" />
-      </mat-form-field>
-      <div>
-                <span class="buttons">
-                    <button mat-raised-button color="primary" type="submit">Register</button>
-                </span>
-      </div>
+        <input matInput type="text" formControlName="email" required/>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <mat-label for="password">Jelszó: </mat-label>
+      <input matInput type="password" formControlName="password" required/>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <mat-label for="rePassword">Jelszó megerősítése: </mat-label>
+      <input matInput type="password" formControlName="rePassword" required/>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <mat-label for="favouritedriver">Kedvenc pilóta: </mat-label>
+      <mat-select formControlName="favouritedriver" required>
+        <mat-option value="Alexander Albon">Alexander Albon</mat-option>
+        <mat-option value="Carlos Sainz">Carlos Sainz</mat-option>
+        <mat-option value="Charles Leclerc">Charles Leclerc</mat-option>
+        <mat-option value="Daniel Ricciardo">Daniel Ricciardo</mat-option>
+        <mat-option value="Esteban Ocon">Esteban Ocon</mat-option>
+        <mat-option value="Fernando Alonso">Fernando Alonso</mat-option>
+        <mat-option value="George Russell">George Russell</mat-option>
+        <mat-option value="Guanyu Zhou">Guanyu Zhou</mat-option>
+        <mat-option value="Kevin Magnussen">Kevin Magnussen</mat-option>
+        <mat-option value="Lance Stroll">Lance Stroll</mat-option>
+        <mat-option value="Lando Norris">Lando Norris</mat-option>
+        <mat-option value="Lewis Hamilton">Lewis Hamilton</mat-option>
+        <mat-option value="Logan Sargeant">Logan Sargeant</mat-option>
+        <mat-option value="Max Verstappen">Max Verstappen</mat-option>
+        <mat-option value="Nico Hulkenberg">Nico Hulkenberg</mat-option>
+        <mat-option value="Oscar Piastri">Oscar Piastri</mat-option>
+        <mat-option value="Pierre Gasly">Pierre Gasly</mat-option>
+        <mat-option value="Sergio Perez">Sergio Perez</mat-option>
+        <mat-option value="Valtteri Bottas">Valtteri Bottas</mat-option>
+        <mat-option value="Yuki Tsunoda">Yuki Tsunoda</mat-option>
+      </mat-select>
+    </mat-form-field>
+      <br>
+        <span class="buttons">
+            <button mat-raised-button color="red" type="submit">Register</button>
+        </span>
     </form>
   </div>
-</div>
+

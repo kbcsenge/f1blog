@@ -1,13 +1,24 @@
-<ul>
+<ul class="nav">
   <li class="homeicon" (click)="goToHome()">Kezdőlap</li>
   <li class="right">Bejelentkezés</li>
   <li class="right" (click)="goToRegister()">Regisztráció</li>
 </ul>
 
 <div class="main_component">
-  <span><mat-label for="email">Email: </mat-label><input matInput type="text" [formControl]="email" /></span>
-  <span><label for="password">Password: </label><input type="password" [formControl]="password" /></span>
-  <span>
-        <mat-button (click)="login()" matSuffix>Login</mat-button>
-    </span>
+  <h1>Bejelentkezés</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-form-field>
+    <mat-label for="email">Email: </mat-label>
+    <input matInput type="text" formControlName="email" required/>
+  </mat-form-field>
+    <br>
+  <mat-form-field>
+    <mat-label for="password">Password: </mat-label>
+    <input matInput type="password" formControlName="password" required/>
+  </mat-form-field>
+    <br>
+  <span class="buttons">
+      <button mat-raised-button color="red" type="submit">Bejelentkezés</button>
+  </span>
+  </form>
 </div>

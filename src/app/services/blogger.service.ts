@@ -6,10 +6,10 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
   providedIn: 'root'
 })
 export class BloggerService {
-  collectionName = 'Users';
+  collectionName = 'Bloggers';
   constructor(private afs: AngularFirestore) { }
 
   create(blogger: Bloggers) {
-    return this.afs.collection<Bloggers>(this.collectionName).doc(blogger.id).set(blogger);
+    return this.afs.collection<Bloggers>(this.collectionName).doc().set(blogger);
   }
 }

@@ -26,12 +26,13 @@ import {ValtteriBottasComponent} from "./drivers/valtteri-bottas/valtteri-bottas
 import {GuanyuZhouComponent} from "./drivers/guanyu-zhou/guanyu-zhou.component";
 import {LanceStrollComponent} from "./drivers/lance-stroll/lance-stroll.component";
 import {AuthGuard} from "@angular/fire/auth-guard";
+import {AuthguardService} from "./services/authguard.service";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: LoginhomeComponent},
-  { path : 'new' , component: NewpostComponent},
+  { path: 'home', component: LoginhomeComponent, canActivate: [AuthguardService]},
+  { path : 'new' , component: NewpostComponent, canActivate: [AuthguardService]},
   { path : '' , component: HomeComponent}
 ];
 

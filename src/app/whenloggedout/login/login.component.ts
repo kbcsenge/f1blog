@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {FormControl} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {AuthenticationService} from "../../services/authentication.service";
 import {Subscription} from "rxjs";
 
@@ -9,8 +9,8 @@ import {Subscription} from "rxjs";
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements OnInit, OnDestroy{
-  constructor(private router: Router,  private authService: AuthenticationService) {
+export class LoginComponent{
+  constructor(private router: Router,  private auth: AuthenticationService) {
   }
 
   goToHome(){
@@ -21,28 +21,20 @@ export class LoginComponent implements OnInit, OnDestroy{
     this.router.navigate(['/register']);
   }
 
-  email = new FormControl('');
-  password = new FormControl('');
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
-  loadingSubscription?: Subscription;
-
-  loading: boolean = false;
-
-  async login() {
-    this.loading = true;
-    this.authService.login(this.email.value as string, this.password.value as string).then(cred => {
-      console.log(cred);
-      this.router.navigateByUrl('/home');
-      this.loading = false;
-    }).catch(error => {
-      console.error(error);
-      this.loading = false;
-    });
-  }
-
-  ngOnDestroy() {
-    this.loadingSubscription?.unsubscribe();
-  }
-  ngOnInit() {
+ login() {
+    if (this.loginForm.get('email')?.value && this.loginForm.get('password')?.value){
+      this.auth.login(this.loginForm.get('email')?.value as string, this.loginForm.get('password')?.value as string).then(() => {
+        this.router.navigateByUrl('/home');
+      }).catch( () => {
+        alert("Hibás e-mail cím vagy jelszó!");
+      });
+    }else{
+      alert("Hiányzó értékek!")
+    }
   }
 }

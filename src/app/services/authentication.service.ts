@@ -16,11 +16,12 @@ export class AuthenticationService {
     return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  isUserLoggedIn() {
-    return this.auth.user;
-  }
 
   logout() {
     return this.auth.signOut();
+  }
+
+  isLoggedIn() {
+    return this.auth.user;
   }
 }

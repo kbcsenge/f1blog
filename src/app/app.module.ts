@@ -42,6 +42,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AngularFireModule} from "@angular/fire/compat";
 import {provideHttpClient} from "@angular/common/http";
 import {firebaseConfig} from "./env/environment";
+import { Location } from '@angular/common';
+import {MatOption, MatSelect} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -88,7 +90,9 @@ import {firebaseConfig} from "./env/environment";
     AngularFireModule.initializeApp(firebaseConfig),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    MatSelect,
+    MatOption
   ],
   providers: [
     provideAnimationsAsync(),
