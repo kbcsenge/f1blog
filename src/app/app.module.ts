@@ -24,6 +24,7 @@ import {firebaseConfig} from "./env/environment";
 import {MatOption, MatSelect} from "@angular/material/select";
 import { LoggedinmenuComponent } from './loggedinmenu/loggedinmenu.component';
 import { LoggedoutmenuComponent } from './loggedoutmenu/loggedoutmenu.component';
+import { EditblogpostComponent } from './whenloggedin/editblogpost/editblogpost.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LoggedoutmenuComponent } from './loggedoutmenu/loggedoutmenu.component'
     NewpostComponent,
     SeeothersComponent,
     LoggedinmenuComponent,
-    LoggedoutmenuComponent
+    LoggedoutmenuComponent,
+    EditblogpostComponent
   ],
   imports: [
     BrowserModule,

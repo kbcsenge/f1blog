@@ -1,8 +1,8 @@
 <app-loggedinmenu></app-loggedinmenu>
 
 <div class="main_component">
-<form [formGroup]="newPost" (ngSubmit)="save()">
-  <h1>Új poszt</h1>
+<form [formGroup]="editPost" (ngSubmit)="save()">
+  <h1>Poszt szerkesztése</h1>
   <mat-form-field>
     <mat-label for="title">Cím:</mat-label>
     <input matInput type="text" formControlName="title" required/>

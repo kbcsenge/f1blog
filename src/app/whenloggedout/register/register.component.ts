@@ -14,13 +14,6 @@ export class RegisterComponent {
   constructor( private router: Router, private auth: AuthenticationService, private bloggerService: BloggerService) {
   }
 
-  goToLogin(){
-    this.router.navigate(['/login']);
-  }
-
-  goToHome(){
-    this.router.navigate(['/']);
-  }
 
   signUpForm = new FormGroup({
     email: new FormControl(''),
@@ -41,6 +34,7 @@ export class RegisterComponent {
           const blogger: Bloggers = {
             username: this.signUpForm.get('username')?.value as string,
             fullname: this.signUpForm.get('fullname')?.value as string,
+            email: this.signUpForm.get('email')?.value as string,
             favouritedriver: this.signUpForm.get('favouritedriver')?.value as string,
           };
           this.bloggerService.create(blogger).then(() => {

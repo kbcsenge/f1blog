@@ -1,8 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {AuthenticationService} from "../../services/authentication.service";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -11,14 +10,6 @@ import {Subscription} from "rxjs";
 })
 export class LoginComponent{
   constructor(private router: Router,  private auth: AuthenticationService) {
-  }
-
-  goToHome(){
-    this.router.navigate(['/']);
-  }
-
-  goToRegister(){
-    this.router.navigate(['/register']);
   }
 
   loginForm = new FormGroup({

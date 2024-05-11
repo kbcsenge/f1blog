@@ -9,10 +9,5 @@ import {Router} from "@angular/router";
 export class SeeothersComponent {
   constructor( private router: Router) {
   }
-  goToHome(){
-    this.router.navigate(['/home']);
-  }
-  logout(){
-    this.router.navigate(['/']);
-  }
+
 }

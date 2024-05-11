@@ -3,22 +3,23 @@ import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
-  selector: 'app-newpost',
-  templateUrl: './newpost.component.html',
-  styleUrl: './newpost.component.scss'
+  selector: 'app-editblogpost',
+  templateUrl: './editblogpost.component.html',
+  styleUrl: './editblogpost.component.scss'
 })
-export class NewpostComponent {
+export class EditblogpostComponent {
   constructor( private router: Router) {
   }
 
-  newPost = new FormGroup({
+  editPost = new FormGroup({
     title: new FormControl(''),
     picture: new FormControl(''),
     text: new FormControl(''),
   });
 
-  save() {
+  save(){
 
   }
+
 
 }
