@@ -36,7 +36,7 @@ export class RegisterComponent {
     if (this.signUpForm.get('password')?.value === this.signUpForm.get('rePassword')?.value) {
       if (this.signUpForm.get('username')?.value && this.signUpForm.get('fullname')?.value
         && this.signUpForm.get('email')?.value && this.signUpForm.get('favouritedriver')?.value
-        && this.signUpForm.get('password')?.value && this.signUpForm.get('repassword')?.value) {
+        && this.signUpForm.get('password')?.value && this.signUpForm.get('rePassword')?.value) {
         this.auth.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string).then((cred: any) => {
           const blogger: Bloggers = {
             username: this.signUpForm.get('username')?.value as string,
@@ -44,6 +44,7 @@ export class RegisterComponent {
             favouritedriver: this.signUpForm.get('favouritedriver')?.value as string,
           };
           this.bloggerService.create(blogger).then(() => {
+            this.router.navigateByUrl('/login');
           }).catch((error: any) => {
             alert(error);
           })

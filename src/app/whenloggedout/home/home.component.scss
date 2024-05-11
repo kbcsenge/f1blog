@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* This will align the slideshow towards the top */
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 50px; /* Adjust this value to move the slideshow down */
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+}
+
+.slideshow {
+  margin-top: 5%;
+  position: relative;
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+img.corner {
+  position: absolute;
+  max-width: 60%;
+  height: auto;
+}
+
+img.top-left {
+  top: 6%;
+  left: 0;
+}
+
+img.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+img.top-right {
+  top: 6%;
+  right: 0;
+}
+
+img.bottom-right {
+  bottom: 0;
+  right: 0;
+}
