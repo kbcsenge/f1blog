@@ -1,5 +1,7 @@
 # F1blog
 
+AKI review-za!! A keresőbe írjátok be az én username-em: kbcsenge
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
 
 ## Development server
