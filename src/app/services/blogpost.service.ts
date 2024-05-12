@@ -10,18 +10,20 @@ export class BlogpostService {
   constructor(private firestore: AngularFirestore) { }
 
   createBlogpost(blogpost: BlogPost) {
-    return this.firestore.collection<BlogPost>(this.collectionName).doc().set(blogpost);
+    const docRef = this.firestore.collection<BlogPost>(this.collectionName).doc(); // Új dokumentum létrehozása
+    blogpost.id = docRef.ref.id;
+    return docRef.set(blogpost); // A blogbejegyzés mentése a Firestore-ban
   }
 
   editBlogpost(id: string, blogpost: BlogPost) {
-    return this.firestore.doc(`blogposts/${id}`).update(blogpost);
+    return this.firestore.doc(`Blogpost/${id}`).update(blogpost);
   }
 
   getBlogpostsByUsername(username: string) {
-    return this.firestore.collection('blogposts', ref => ref.where('username', '==', username)).snapshotChanges();
+    return this.firestore.collection('Blogpost', ref => ref.where('creator', '==', username)).snapshotChanges();
   }
 
   deleteBlogpost(id: string) {
-    return this.firestore.doc(`blogposts/${id}`).delete();
+    return this.firestore.doc(`Blogpost/${id}`).delete();
   }
 }

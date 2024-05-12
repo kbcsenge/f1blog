@@ -20,13 +20,16 @@ $f1blog-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($f1blog-theme);
 
-
 .nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #c41818;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 li {

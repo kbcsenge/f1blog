@@ -7,13 +7,15 @@ import {LoginhomeComponent} from "./whenloggedin/loginhome/loginhome.component";
 import {NewpostComponent} from "./whenloggedin/newpost/newpost.component";
 import {AuthguardService} from "./services/authguard.service";
 import {EditblogpostComponent} from "./whenloggedin/editblogpost/editblogpost.component";
+import {SeeothersComponent} from "./whenloggedin/seeothers/seeothers.component";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: LoginhomeComponent, canActivate: [AuthguardService]},
   { path : 'new' , component: NewpostComponent, canActivate: [AuthguardService]},
-  { path : 'edit' , component: EditblogpostComponent, canActivate: [AuthguardService]},
+  { path : 'edit/:id' , component: EditblogpostComponent, canActivate: [AuthguardService]},
+  { path : 'seeothers/:username' , component: SeeothersComponent, canActivate: [AuthguardService]},
   { path : '' , component: HomeComponent}
 ];
 

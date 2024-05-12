@@ -2,12 +2,22 @@
 <br>
 <div class="profileinfo" *ngIf="blogger$ | async as blogger">
   <h4>Név: {{ blogger.fullname }}</h4>
-  <h4>Felhasználónév: {{ blogger.fullname }}</h4>
-  <h4>Kedvenc sofőr: {{ blogger.favouritedriver }}</h4>
-  <button id="create" mat-raised-button color="red" type="submit" (click)="createNewPost()">Új poszt</button>
+  <h4>Felhasználónév: {{ blogger.username }}</h4>
+  <h4>Kedvenc pilóta: {{ blogger.favouritedriver }}</h4>
+  <button id="create" mat-raised-button color="warn" type="submit" (click)="createNewPost()">Új poszt</button>
 </div>
 
-<div>
-  <button mat-raised-button color="red" type="submit" (click)="editPost()">Edit</button>
+<div class="posts" *ngFor="let post of blogposts$ | async">
+  <span>
+    <button mat-raised-button color="warn" type="submit" (click)="editPost(post.id)">Szerkesztés</button>
+  </span>
+  <span>
+    <button mat-raised-button color="warn" type="submit" (click)="deletePost(post.id)">Törlés</button>
+  </span>
+  <p>{{ post.date | customdateformat }}</p>
+  <h1>{{ post.title }}</h1>
+  <img [src]="getPictureUrl(post.pictureUrl) | async" alt="{{ post.title }}">
+  <h4 style="white-space: pre-wrap;">{{ post.text }}</h4>
 </div>
+
 

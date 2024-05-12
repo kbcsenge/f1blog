@@ -8,6 +8,8 @@ import {AuthenticationService} from "../services/authentication.service";
   styleUrl: './loggedinmenu.component.scss'
 })
 export class LoggedinmenuComponent {
+
+  username: string = '';
   constructor( private router: Router, private auth: AuthenticationService) {
   }
 
@@ -17,5 +19,10 @@ export class LoggedinmenuComponent {
   }
   goToHome(){
     this.router.navigate(['/home']);
+  }
+
+  searchOthers(username: string){
+    this.username=username;
+    this.router.navigate(['/seeothers', this.username]);
   }
 }

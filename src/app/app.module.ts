@@ -25,6 +25,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import { LoggedinmenuComponent } from './loggedinmenu/loggedinmenu.component';
 import { LoggedoutmenuComponent } from './loggedoutmenu/loggedoutmenu.component';
 import { EditblogpostComponent } from './whenloggedin/editblogpost/editblogpost.component';
+import {CustomDateFormatPipe} from "./pipe/customdateformat.pipe";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditblogpostComponent } from './whenloggedin/editblogpost/editblogpost.
     SeeothersComponent,
     LoggedinmenuComponent,
     LoggedoutmenuComponent,
-    EditblogpostComponent
+    EditblogpostComponent,
+    CustomDateFormatPipe
   ],
   imports: [
     BrowserModule,

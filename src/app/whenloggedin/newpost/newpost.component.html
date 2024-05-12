@@ -1,25 +1,21 @@
 <app-loggedinmenu></app-loggedinmenu>
 
-<div class="main_component">
-<form [formGroup]="newPost" (ngSubmit)="save()">
-  <h1>Új poszt</h1>
-  <mat-form-field>
-    <mat-label for="title">Cím:</mat-label>
-    <input matInput type="text" formControlName="title" required/>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>Kép feltöltése</mat-label>
-    <input type="file" formControlName="picture" required>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label for="text">Szöveg: </mat-label>
-    <input matInput type="text" formControlName="text" required/>
-  </mat-form-field>
-  <br>
-  <span class="buttons">
-      <button mat-raised-button color="red" type="submit">Új poszt</button>
-  </span>
-</form>
+<div class="main">
+  <form (ngSubmit)="save()" class="form">
+    <h1>Új poszt</h1>
+      <mat-label for="title">Cím:</mat-label>
+      <input matInput type="text" [(ngModel)]="blogPost.title" name="title" required/>
+    <br>
+      <mat-label>Kép feltöltése</mat-label>
+      <input type="file" (change)="uploadFile($event)" name="picture"  required>
+    <br>
+      <mat-label for="text">Szöveg: </mat-label>
+      <textarea [(ngModel)]="blogPost.text" name="text" required></textarea>
+    <br>
+    <span class="buttons">
+        <button mat-raised-button color="warn" type="submit">Új poszt</button>
+        <button mat-raised-button color="warn" (click)="goback()" type="submit">Vissza</button>
+    </span>
+  </form>
 </div>
+

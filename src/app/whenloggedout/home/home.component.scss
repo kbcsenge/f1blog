@@ -1,15 +1,16 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* This will align the slideshow towards the top */
+  align-items: flex-start;
   height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  padding-top: 50px; /* Adjust this value to move the slideshow down */
+  padding-top: 50px;
 }
 
 h1{
+  margin-top: 100px;
   font-size: 60px;
   text-align: center;
 }

@@ -1,2 +1,15 @@
 <app-loggedinmenu></app-loggedinmenu>
+<br>
+<div class="profileinfo" *ngIf="blogger$ | async as blogger">
+  <h4>Név: {{ blogger.fullname }}</h4>
+  <h4>Felhasználónév: {{ blogger.username }}</h4>
+  <h4>Kedvenc pilóta: {{ blogger.favouritedriver }}</h4>
+  <button mat-raised-button color="warn" (click)="goback()" type="submit">Vissza a főoldalra</button>
+</div>
 
+<div class="posts" *ngFor="let post of blogposts$ | async">
+  <p>{{ post.date | customdateformat }}</p>
+  <h1>{{ post.title }}</h1>
+  <img [src]="getPictureUrl(post.pictureUrl) | async" alt="{{ post.title }}">
+  <h4 style="white-space: pre-wrap;">{{ post.text }}</h4>
+</div>
