@@ -10,9 +10,9 @@ export class BlogpostService {
   constructor(private firestore: AngularFirestore) { }
 
   createBlogpost(blogpost: BlogPost) {
-    const docRef = this.firestore.collection<BlogPost>(this.collectionName).doc(); // Új dokumentum létrehozása
+    const docRef = this.firestore.collection<BlogPost>(this.collectionName).doc();
     blogpost.id = docRef.ref.id;
-    return docRef.set(blogpost); // A blogbejegyzés mentése a Firestore-ban
+    return docRef.set(blogpost);
   }
 
   editBlogpost(id: string, blogpost: BlogPost) {
